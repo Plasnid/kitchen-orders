@@ -1,5 +1,6 @@
 <template>
     <section>
+        <h2>Kitchen</h2>
         <h3 v-if="foodItems.length==0">Please Place Your Order</h3>
         <h3 v-else-if="foodItems.length>0 && foodItems.length<5">Working On Your Order</h3>
         <h3 v-else>The Kitchen Is Overloaded!</h3>
