@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+    <h1>Welcome To Chez NomNom</h1>
+    <h2>Please click on a food item to place your order!</h2>
+    <h3>Menu</h3>
     <ul id="menu">
       <li v-for="food in foods" :key="food" @click="addToOrder">{{ food }}</li>
     </ul>
@@ -38,5 +41,15 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+ul{
+  list-style-type: none;
+  list-style-position: outside;
+  margin: 0;
+  padding:0;
+}
+li{
+  margin: 0;
+  padding: 0;
 }
 </style>
