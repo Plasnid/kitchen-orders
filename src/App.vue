@@ -1,18 +1,32 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <ul id="menu">
+      <li v-for="food in foods" :key="food" @click="addToOrder">{{ food }}</li>
+    </ul>
+    <FoodOrder :foodItems="kitchenOrder" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import FoodOrder from './components/FoodOrder.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    FoodOrder
+  },
+  data() {
+    return {
+      foods: ["Pizza","Chicken","Carrots","Falafel"],
+      kitchenOrder: []
+    }
+  },
+  methods: {
+    addToOrder(e) {
+      console.log(e.target.innerText);
+      this.kitchenOrder.push(e.target.innerText);
+    }
+  },
 }
 </script>
 
